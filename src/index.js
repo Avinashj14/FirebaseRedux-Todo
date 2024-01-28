@@ -7,6 +7,19 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
 import store from './store';
+import { setDocId, setUid, setUsername } from './actions/authActions';
+
+
+const storedUid = localStorage.getItem('uid');
+const storedDocId = localStorage.getItem('docId');
+const storedUsername = localStorage.getItem('username');
+
+
+if (storedUid && storedDocId && storedUsername) {
+  store.dispatch(setUid(storedUid));
+  store.dispatch(setDocId(storedDocId));
+  store.dispatch(setUsername(storedUsername));
+}
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

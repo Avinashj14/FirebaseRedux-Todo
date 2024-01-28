@@ -3,7 +3,7 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { connect } from 'react-redux';
-import { signOutUser } from '../../actions/authActions';
+import { clearUserData, signOutUser } from '../../actions/authActions';
 import { useSelector } from 'react-redux';
 
 
@@ -11,6 +11,7 @@ const NavBar = ({signOutUser}) => {
   const  navigate=useNavigate();
   const handelLogout=async()=>{
     await signOutUser();
+    clearUserData();
     navigate('/SignIn')
   }
   const username = useSelector(state => state.auth.username);

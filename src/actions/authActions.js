@@ -3,6 +3,7 @@ import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } f
 import { auth, firestore } from '../firebase';
 import { addDoc, collection, getDocs, query, where } from 'firebase/firestore'; 
 
+
 export const signUp = (email, password, username) => async (dispatch) => {
   try {
     console.log('signUp action called'); // Add this line to log that the action is called
@@ -46,8 +47,12 @@ export const signUp = (email, password, username) => async (dispatch) => {
       const userData = userDoc.data();
       const username = userData.username;
       console.log('Username:', username);
+      // localStorage.setItem('authToken', userCredential.accessToken);
+      localStorage.setItem('docId', documentId);
+      localStorage.setItem('username', username);
+      localStorage.setItem('uid', uid);
+
       dispatch(setDocId(documentId));
-  
       dispatch(setUsername(username));
     }
       dispatch(setUid(uid));
@@ -65,6 +70,11 @@ export const signUp = (email, password, username) => async (dispatch) => {
       await signOut(auth);
       dispatch(setUid(null));
       dispatch(setDocId(null)); 
+      // localStorage.removeItem('authToken');
+      localStorage.removeItem('docId');
+      localStorage.removeItem('username');
+      localStorage.removeItem('uid');
+      dispatch(clearUserData());
     
     } catch (error) {
       console.error('Error signing out:', error.message);
@@ -83,4 +93,7 @@ export const setDocId = (docId) => ({
 export const setUsername = (username) => ({
   type: 'SET_USERNAME',
   payload: username,
+});
+export const clearUserData = () => ({
+  type: 'CLEAR_USER_DATA',
 });

@@ -22,7 +22,7 @@ const SignIn = ({signIn}) => {
   return (
     <>
 <section className="bg-gray-50 min-h-screen flex items-center justify-center">
-<h1>ajay</h1>
+<h1 className="font-bold text-4xl">Test branch</h1>
   <div className="bg-gray-100 flex rounded-2xl shadow-lg max-w-3xl p-5 items-center">
   
     <div className="md:w-1/2 px-8 md:px-16">

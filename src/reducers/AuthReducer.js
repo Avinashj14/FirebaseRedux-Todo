@@ -22,6 +22,12 @@ const initialState = {
         ...state,
         username: action.payload,
       };
+      case 'CLEAR_USER_DATA':
+        return {
+          uid: null,
+          docId: null,
+          username: null,
+        };
       default:
         return state;
     }
