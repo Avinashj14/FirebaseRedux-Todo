@@ -1,4 +1,5 @@
 // todoReducer.js
+import { toast } from "react-toastify";
 const initialState = {
   todos: [],
 };
@@ -7,8 +8,12 @@ const ADD_TODO = 'ADD_TODO';
 
 
 const todoReducer = (state = initialState, action) => {
+  const showToast = (message) => {
+    toast.success(message);
+  };
   switch (action.type) {
     case 'ADD_TODO':
+      showToast("Adding Data")
       return {
         ...state,
         todos: [...state.todos, action.payload],

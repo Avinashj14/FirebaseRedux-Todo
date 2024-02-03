@@ -12,6 +12,9 @@ import Tasks from "../todo/Tasks";
 
 
 
+
+
+
 // const Dashboard = ({uid,addTodo, signOutUser ,addSampleData}) => {
 const Dashboard = ({uid,addTodo, signOutUser }) => {
     const navigate = useNavigate();
@@ -27,7 +30,7 @@ const Dashboard = ({uid,addTodo, signOutUser }) => {
     },[]) 
   return (
     <>
-  
+
     <NavBar signOutUser={signOutUser} />
     <TaskForm addTask={(todo) => addTodo( todo)}/>
 <Tasks/>

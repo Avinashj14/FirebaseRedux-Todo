@@ -10,6 +10,7 @@ import store from './store';
 import { setDocId, setUid, setUsername } from './actions/authActions';
 
 
+
 const storedUid = localStorage.getItem('uid');
 const storedDocId = localStorage.getItem('docId');
 const storedUsername = localStorage.getItem('username');
@@ -25,6 +26,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Provider store={store}>
     <App />
+ 
   </Provider>
 );
 

@@ -28,6 +28,7 @@ const initialState = {
           docId: null,
           username: null,
         };
+        
       default:
         return state;
     }

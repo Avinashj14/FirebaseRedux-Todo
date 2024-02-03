@@ -2,11 +2,11 @@
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from 'firebase/auth';
 import { auth, firestore } from '../firebase';
 import { addDoc, collection, getDocs, query, where } from 'firebase/firestore'; 
-
+ 
 
 export const signUp = (email, password, username) => async (dispatch) => {
   try {
-    console.log('signUp action called'); // Add this line to log that the action is called
+    console.log('signUp action called'); 
     const userCredential = await createUserWithEmailAndPassword(auth, email, password)
     
     
@@ -23,7 +23,7 @@ export const signUp = (email, password, username) => async (dispatch) => {
   
   
     } catch (error) {
-      console.error('Error signing up:', error.message);
+      console.error('Error signing up:', error.message);    
     }
   };
   

@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { connect } from 'react-redux';
 import { signIn } from '../../actions/authActions';
 
+
 const SignIn = ({signIn}) => {
 
   const [email, setEmail] = useState('');
@@ -22,7 +23,7 @@ const SignIn = ({signIn}) => {
   return (
     <>
 <section className="bg-gray-50 min-h-screen flex items-center justify-center">
-<h1 className="font-bold text-4xl">Test branch</h1>
+
   <div className="bg-gray-100 flex rounded-2xl shadow-lg max-w-3xl p-5 items-center">
   
     <div className="md:w-1/2 px-8 md:px-16">
@@ -59,6 +60,7 @@ const SignIn = ({signIn}) => {
       <img className="rounded-2xl" src="https://imgs.search.brave.com/LC_JWKbfGPUxQCEOxQ_27K8aaej7v_Eq2RsPuaDvtJ8/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9jbGlj/a3VwLmNvbS9ibG9n/L3dwLWNvbnRlbnQv/dXBsb2Fkcy8yMDE5/LzAxL3RvLWRvLWxp/c3QtYXBwcy5wbmc"/>
     </div>
   </div>
+
 </section>
     
     </>
